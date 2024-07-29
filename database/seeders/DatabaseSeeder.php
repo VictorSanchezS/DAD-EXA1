@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Entry;
 use App\Models\User;
+use App\Models\Vehicle;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -19,5 +21,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+
+        Vehicle::factory()->count(10)->create();
+        Entry::factory()->count(20)->create();
     }
 }
