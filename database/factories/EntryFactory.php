@@ -19,7 +19,7 @@ class EntryFactory extends Factory
     {
         return [
             'plate' => Vehicle::inRandomOrder()->first()->plate,
-            'date' => $this->faker->date(),
+            'date' => $this->faker->dateTime(),
         ];
     }
 }

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->foreign('plate')
             ->references('plate')
             ->on('vehicles')
+            ->onUpdate('cascade')
             ->onDelete('cascade');
         });
     }

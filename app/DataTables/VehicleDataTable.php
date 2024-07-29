@@ -22,7 +22,7 @@ class VehicleDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', 'vehicle.action')
+            ->addColumn('action', 'vehicles.action')
             ->setRowId('id');
     }
 

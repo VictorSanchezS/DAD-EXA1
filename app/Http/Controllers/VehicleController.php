@@ -15,7 +15,7 @@ class VehicleController extends Controller
         $texto = trim($request->get('texto'));
         //$registros = Vehicle::paginate(10);
         $registros= Vehicle::where('plate', 'like','%'.$texto.'%')->paginate(10);
-        return view('vehicle.index', compact('registros','texto'));
+        return view('vehicles.index', compact('registros','texto'));
     }
 
     /**
@@ -25,7 +25,7 @@ class VehicleController extends Controller
     {
         //return view('vehicle.create');
         $vehicle = new Vehicle();
-        return view('vehicle.action',['vehicle'=>new Vehicle()]);
+        return view('vehicles.action',['vehicle'=>new Vehicle()]);
     }
 
     /**
@@ -62,7 +62,7 @@ class VehicleController extends Controller
     public function edit($id)
     {
         $vehicle = Vehicle::findOrFail($id);
-        return view('vehicle.action',compact('vehicle'));
+        return view('vehicles.action',compact('vehicle'));
     }
 
     /**
