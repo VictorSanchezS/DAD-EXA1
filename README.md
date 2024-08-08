@@ -57,7 +57,7 @@ php artisan datatables:make Entry
 ## 8. Vistas
 Creamos las vistas
 
-9. Brezee
+## 9. Brezee
 ```bash
 composer require laravel/breeze --dev
 ```
