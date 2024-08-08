@@ -74,8 +74,8 @@ class EntryController extends Controller
     {
         //$entry = Entry::findOrFail($request->id);
         $entry = Entry::findOrFail($id);
-        $entry->plate=$request->plate;
-        $entry->date=$request->date;
+        $entry->plate = $request->input('plate');
+        $entry->date = $request->input('date');
         $entry->save();
         return response()->json([
             "status"=> "success",

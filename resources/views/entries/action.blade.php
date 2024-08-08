@@ -24,6 +24,9 @@ $fechaActual = date('Y-m-d');
                         <option value="{{ $car->plate }}" {{ $entry->plate == $car->plate ? 'selected' : '' }}>{{ $car->plate }}</option>
                     @endforeach
                 </select>
+                @if($entry->plate)
+                <input type="hidden" name="plate" value="{{ $entry->plate }}">
+                @endif
                 <div id="msg_plate"></div>
             </div>
             <div class="form-group">
@@ -32,7 +35,7 @@ $fechaActual = date('Y-m-d');
                     date_default_timezone_set('America/Lima');
                     $fechaActual = date('Y-m-d\TH:i');
                 @endphp
-                <input type="datetime-local" class="form-control" id="date" name="date" value="{{ $entry->date ? $entry->date : $fechaActual }}" disabled>
+                <input type="datetime-local" class="form-control" id="date" name="date" value="{{ $entry->date ? $fechaActual : $fechaActual }}" disabled>
                 <div id="msg_date"></div>
             </div>
         </div>

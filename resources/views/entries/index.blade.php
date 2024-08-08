@@ -87,20 +87,6 @@
 
 @push('scripts')
 <script>
-    /* $(document).ready(function() {
-        $("#btnNew").on("click", function(){
-            newR();
-        });
-        $(".edit").on("click", function(){
-            var id = $(this).closest('tr').find('td:first').text();
-            edit(id);
-        });
-        $(".delete").on("click", function(){
-            var id = $(this).closest('tr').find('td:first').text();
-            del(id);
-        });
-    }); */
-
     function newR(){
         $.ajax({
             method: 'get',
@@ -110,7 +96,6 @@
                 $("#modal-title").text("Nuevo");
                 $("#textoBoton").text("Guardar");
                 $("#modal-update").modal("show");
-                //save();
             }
         })
     }
@@ -122,7 +107,6 @@
                 $('#modal-update').find('.modal-dialog').html(res);
                 $("#textoBoton, #modal-title").text("Actualizar");
                 $("#modal-update").modal("show");
-                //save();
             }
         })
     }
